@@ -19,10 +19,14 @@ class Main(QWidget):
     def UI(self):
         vbox1 = QVBoxLayout()
 
+        list = QListWidget(self)
+        items=["Maths","IT","Electricity"]
+        list.addItems(items)
         btn1 = QPushButton("submit",self)
         btn2 = QPushButton("exit",self)
 
 
+        vbox1.addWidget(list)
         vbox1.addStretch()
         vbox1.addWidget(btn1)
         vbox1.addWidget(btn2)

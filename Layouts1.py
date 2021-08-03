@@ -23,10 +23,13 @@ class Main(QWidget):
 
         label1 = QLabel("Future Career Camp", self)
         label2 = QLabel("Programming with python track", self)
-        check1 = QC("Group 4",self)
+        check1 = QCheckBox("Group 4",self)
+        self.label3 = QLabel("null",self)
 
         btn1 = QPushButton("submit",self)
+        btn1.clicked.connect(self.first)
         btn2 = QPushButton("exit",self)
+        btn2.clicked.connect(self.second)
 
         mainlayout.addLayout(toplayout)
         mainlayout.addLayout(bottomlayout)
@@ -38,6 +41,8 @@ class Main(QWidget):
         toplayout.addStretch()
         toplayout.addWidget(check1)
         toplayout.addStretch()
+        toplayout.addWidget(self.label3)
+        toplayout.addStretch()
 
 
         bottomlayout.addWidget(btn1)
@@ -45,6 +50,15 @@ class Main(QWidget):
 
         self.setLayout(mainlayout)
         self.show
+
+    def first(self):
+        #print("You pressed submit")
+        self.label3.setText("You pressed submit")
+
+    def second(self):
+        #print("You pressed exit")
+        self.label3.setText("You pressed exit")
+
 
 app = QApplication(sys.argv)
 window = Main()

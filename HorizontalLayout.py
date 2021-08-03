@@ -17,21 +17,25 @@ class Main(QWidget):
         self.show()
 
     def UI(self):
-        #hbox1 = QHBoxLayout()
+        hbox1 = QHBoxLayout()
+
 
         btn1 = QPushButton("submit",self)
-
         btn2 = QPushButton("exit",self)
-        btn2.move(80,0)
+        #btn2.move(80,0)
 
 
-        #hbox1.addStretch()
-        #hbox1.addWidget(btn1)
-        #hbox1.addWidget(btn2)
-        #hbox1.addStretch()
+        hbox1.addWidget(text)
+        hbox1.addStretch()
+        hbox1.addWidget(btn1)
+        hbox1.addWidget(btn2)
+        hbox1.addStretch()
 
-        #self.setLayout(hbox1)
-        #self.show()
+        self.setLayout(hbox1)
+        self.show()
+
+
+
 
 
 app = QApplication(sys.argv)
